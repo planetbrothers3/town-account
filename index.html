@@ -2,25 +2,28 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>自治会 会計入力フォーム</title>
+  <title>町内会 会計入力</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
-    body {
-      font-family: sans-serif;
-      margin: 20px;
+    body { font-family: sans-serif; padding: 12px; }
+    h1 { font-size: 20px; }
+    label { display: block; margin-top: 12px; font-weight: bold; }
+    input, select, textarea {
+      width: 100%;
+      padding: 8px;
+      box-sizing: border-box;
+      font-size: 16px;
     }
-    label {
-      font-weight: bold;
-    }
-    small {
-      color: #555;
-    }
-    div {
-      margin-bottom: 12px;
+    button {
+      margin-top: 16px;
+      padding: 10px;
+      width: 100%;
+      font-size: 16px;
     }
   </style>
 </head>
 <body>
-  <h1>自治会 会計入力フォーム</h1>
+  <h1>町内会 会計入力フォーム</h1>
 
   <form id="accountForm">
     <!-- 日付 -->
@@ -29,6 +32,8 @@
       <small>支払いや入金があった日を入力してください。</small><br>
       <input type="date" id="date" name="date" required>
     </div>
+
+    <br>
 
     <!-- 区分 -->
     <div>
@@ -41,6 +46,8 @@
       </select>
     </div>
 
+    <br>
+
     <!-- 科目 -->
     <div>
       <label for="category">科目</label><br>
@@ -50,12 +57,16 @@
       </select>
     </div>
 
+    <br>
+
     <!-- 金額 -->
     <div>
       <label for="amount">金額</label><br>
       <small>円単位で、カンマなしで入力してください。（例：3000）</small><br>
       <input type="number" id="amount" name="amount" required>
     </div>
+
+    <br>
 
     <!-- 内容（メモ） -->
     <div>
@@ -64,15 +75,14 @@
       <textarea id="memo" name="memo" rows="3"></textarea>
     </div>
 
+    <br>
+
     <!-- 送信ボタン -->
-    <div>
-     <button type="submit" onclick="return confirm('この内容で登録してよろしいですか？');">登録
-     </button>
-   </div>
+    <button type="submit">登録</button>
   </form>
 
   <script>
-    // 区分ごとの科目リスト（従来の報告書に合わせたもの）
+   // 区分ごとの科目リスト（従来の報告書に合わせたもの）
     const categories = {
       '収入': [
         '自治会費',
@@ -96,6 +106,7 @@
         '雑費'
       ]
     };
+
 
     // フォーム要素の取得（HTMLの読み込み後）
     window.addEventListener('DOMContentLoaded', () => {
