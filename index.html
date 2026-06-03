@@ -100,7 +100,7 @@
         <option value="支出">支出</option>
       </select>
     </div>
-
+    <Br>
     <!-- 科目 -->
     <div>
       <label for="category">科目</label>
@@ -109,21 +109,21 @@
         <option value="">区分を先に選んでください</option>
       </select>
     </div>
-
+    <br>
     <!-- 金額 -->
     <div>
       <label for="amount">金額</label>
       <small>円単位で、カンマなしで入力してください。（例：3000）</small>
       <input type="number" id="amount" name="amount" required>
     </div>
-
+    <Br>
     <!-- 内容（メモ） -->
     <div>
       <label for="memo">内容</label>
       <small>誰への支払いか、何の入金かなどを簡単に書いてください。</small>
       <textarea id="memo" name="memo" rows="3"></textarea>
     </div>
-
+    <Br>
     <!-- 送信ボタン -->
     <div>
      <button type="submit" onclick="return confirm('この内容で登録してよろしいですか？');">登録
